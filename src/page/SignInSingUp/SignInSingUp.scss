@@ -11,7 +11,7 @@
 
     img {
       position: absolute;
-      right: -35px;
+      right: 55%;
     }
 
     div {
@@ -23,6 +23,12 @@
         font-size: 30px;
         margin-bottom: 40px;
         font-weight: bold;
+
+        svg {
+          margin-right: 20px;
+          font-size: 30px;
+          width: 40px !important;
+        }
       }
     }
   }
