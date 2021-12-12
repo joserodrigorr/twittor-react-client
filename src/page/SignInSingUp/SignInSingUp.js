@@ -14,7 +14,6 @@ export default function SignInSingUp() {
                 <LeftComponent />
                 <RightComponent />
             </Row>
-
         </Container>
     )
 }
@@ -44,7 +43,16 @@ function LeftComponent(){
 function RightComponent(){
     return (
         <Col  className='signin-signup__right' xs={6}>
-            <h2>RightComponent...</h2>
+            <div>
+                <img src={LogoWhiteTwittor} alt="Twittor" />
+                <h2>Mira lo que esta pasando en el mundo en este momento</h2>
+                <h3>Únete a Twittor hoy mismo.</h3>
+                <Button variant='primary'>Regístrate</Button>
+                <Button variant='outline-primary'>
+                    Iniciar sesión
+                </Button>
+            </div>
+            
         </Col>
     )
 }
