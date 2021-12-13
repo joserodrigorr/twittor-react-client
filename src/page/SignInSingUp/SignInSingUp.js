@@ -1,21 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Button} from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearchPlus, faUsers, faComments} from "@fortawesome/free-solid-svg-icons";
+import BasicModal from "../../components/Modal/BasicModal";
 import LogoTwittor from "../../assets/png/logo.png"
 import LogoWhiteTwittor from "../../assets/png/logo-white.png";
 
 import "./SignInSingUp.scss";
 
 export default function SignInSingUp() {
+    const [showModal, setshowModal] = useState(true);
+    const [contentModal, setcontentModal] = useState(null);
+
+
     return (
+      <>  
         <Container className='signin-signup' fluid>
             <Row>
                 <LeftComponent />
                 <RightComponent />
             </Row>
         </Container>
-    )
+        <BasicModal show={showModal} setShow={setshowModal} >
+            <div>
+                <h2>Modal Content</h2>
+            </div>
+        </BasicModal>
+    </>
+    );
 }
 
 function LeftComponent(){
