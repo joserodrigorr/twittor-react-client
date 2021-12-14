@@ -22,7 +22,7 @@ export default function SignInForm(props) {
     });
 
     if (size(formData) !== validCount) {
-      toast.warning("Completa todo los campos del formulario");
+      toast.warning("Completa todos los campos del formulario");
     } else {
       if (!isEmailValid(formData.email)) {
         toast.warning("Email es invalido");

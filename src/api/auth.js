@@ -23,7 +23,7 @@ export function signUpApi(user) {
       if (response.status >= 200 && response.status < 300) {
         return response.json();
       }
-      return { code: 404, message: "Email no disponible" };
+      return { code: 404, message: "Email ya registrado.intente con otro." };
     })
     .then(result => {
       return result;
