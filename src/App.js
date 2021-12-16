@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import SignInSingUp from "./page/SignInSingUp";
 import { ToastContainer } from "react-toastify";
 import { AuthContext } from "./utils/contexts";
-import { isUserLogedApi } from "./api/auth"
+import { isUserLogedApi } from "./api/auth";
+import Routing from "./routes/Routing";
 
 
 export default function App() {
@@ -23,7 +24,11 @@ export default function App() {
   
   return  (
     <AuthContext.Provider value={user}>
-      {user ? <h1>Estas Logeado</h1> : <SignInSingUp setrefreshCheckLogin={setrefreshCheckLogin}/>}
+      {user ? (
+         <Routing/>
+        ) : (
+        <SignInSingUp setrefreshCheckLogin={setrefreshCheckLogin}/>
+      )}
       <ToastContainer 
         position="top-right"
         autoClose={5000}
