@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button} from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearchPlus, faUsers, faComments} from "@fortawesome/free-solid-svg-icons";
+import { 
+    faSearchPlus, 
+    faUsers, 
+    faComments
+} from "@fortawesome/free-solid-svg-icons";
 import BasicModal from "../../components/Modal/BasicModal";
 import SignUpForm from "../../components/SignUpForm";
 import SignInForm from '../../components/SignInForm';
@@ -20,13 +24,14 @@ export default function SignInSingUp(props) {
         setcontentModal(content);
     };
 
-
     return (
-      <>  
+        <>  
         <Container className='signin-signup' fluid>
             <Row>
                 <LeftComponent />
-                <RightComponent  openModal={openModal}  setshowModal = {setshowModal}
+                <RightComponent  
+                    openModal={openModal}  
+                    setshowModal = {setshowModal}
                     setrefreshCheckLogin={setrefreshCheckLogin}
                 />
             </Row>
@@ -34,7 +39,7 @@ export default function SignInSingUp(props) {
         <BasicModal show={showModal} setShow={setshowModal} >
             {contentModal}
         </BasicModal>
-    </>
+        </>
     );
 }
 
@@ -62,6 +67,7 @@ function LeftComponent(){
 
 function RightComponent(props){
     const {openModal,setshowModal,setrefreshCheckLogin}= props;
+    
     return (
         <Col  className='signin-signup__right' xs={6}>
             <div>
@@ -76,12 +82,15 @@ function RightComponent(props){
                 </Button>
                 <Button 
                     variant='outline-primary'
-                    onClick={() => openModal(<SignInForm setrefreshCheckLogin={setrefreshCheckLogin}/>)}
+                    onClick={() => 
+                        openModal(
+                        <SignInForm setrefreshCheckLogin={setrefreshCheckLogin}/>
+                        )
+                    }
                 >
                     Iniciar sesión
                 </Button>
             </div>
-            
         </Col>
     )
 }
