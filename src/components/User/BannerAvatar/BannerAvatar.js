@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from "react-bootstrap";
 import AvatarNoFound from "../../../assets/png/avatar-no-found.png";
 import { API_HOST } from "../../../utils/constant";
 
@@ -7,7 +8,7 @@ import "./BannerAvatar.scss"
 
 export default function BannerAvatar(props) {
   
-  const { user } = props;
+  const { user , loggedUser } = props;
   const bannerUrl = user?.banner
       ? `${API_HOST}/obtenerBanner?id=${user.id}`
       : null;
@@ -20,14 +21,21 @@ export default function BannerAvatar(props) {
   
   return (
     <div className="banner-avatar" style={ {backgroundImage: `url('${bannerUrl}')`}}>
-      <div className="avatar" style={ {backgroundImage: `url('${avatarUrl}')`}} />
+    <div className="avatar" style={ {backgroundImage: `url('${avatarUrl}')`}} />
+    {user && (
+      <div className="options">
+        {loggedUser._id === user.id && <Button>Editar Perfil</Button>}        
+        {loggedUser._id !== user.id && <Button>Seguir</Button>}
+      </div>
+    )}
+
     </div>
   )
 }
 
 
 // import React, { useState, useEffect } from "react";
-// import { Button } from "react-bootstrap";
+// 
 // import ConfigModal from "../../Modal/ConfigModal";
 // import EditUserForm from "../../User/EditUserForm";
 // 

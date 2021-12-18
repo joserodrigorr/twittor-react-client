@@ -23,35 +23,35 @@
     background-repeat: no-repeat;
   }
 
-  // .options {
-  //   position: absolute;
-  //   bottom: -50px;
-  //   right: 15px;
+  .options {
+    position: absolute;
+    bottom: -50px;
+    right: 15px;
 
-  //   button {
-  //     border-radius: 50px;
-  //     background-color: $primary;
-  //     width: 150px;
+    button {
+      border-radius: 50px;
+      background-color: $primary;
+      width: 150px;
 
-  //     &:hover {
-  //       background-color: $primary;
-  //       opacity: 0.6;
-  //     }
+      &:hover {
+        background-color: $primary;
+        opacity: 0.6;
+      }
 
-  //     &.unfollow {
-  //       &:hover {
-  //         border-color: $danger;
-  //         background-color: $danger;
+      &.unfollow {
+        &:hover {
+          border-color: $danger;
+          background-color: $danger;
 
-  //         &::before {
-  //           content: "Deja de seguir";
-  //         }
+          &::before {
+            content: "Deja de seguir";
+          }
 
-  //         span {
-  //           display: none;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }
