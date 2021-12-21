@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useState}from 'react'
 import { Button } from "react-bootstrap";
+import ConfigModal from "../../Modal/ConfigModal";
 import AvatarNoFound from "../../../assets/png/avatar-no-found.png";
 import { API_HOST } from "../../../utils/constant";
 
@@ -7,8 +8,11 @@ import { API_HOST } from "../../../utils/constant";
 import "./BannerAvatar.scss"
 
 export default function BannerAvatar(props) {
+
+  console.log(props)
   
   const { user , loggedUser } = props;
+  const [showModal, setshowModal] = useState(false)
   const bannerUrl = user?.banner
       ? `${API_HOST}/obtenerBanner?id=${user.id}`
       : null;
@@ -17,104 +21,23 @@ export default function BannerAvatar(props) {
       ? `${API_HOST}/obtenerAvatar?id=${user.id}`
       : AvatarNoFound;
 
-  console.log(user);
+  
   
   return (
     <div className="banner-avatar" style={ {backgroundImage: `url('${bannerUrl}')`}}>
     <div className="avatar" style={ {backgroundImage: `url('${avatarUrl}')`}} />
     {user && (
       <div className="options">
-        {loggedUser._id === user.id && <Button>Editar Perfil</Button>}        
+        {loggedUser._id === user.id && <Button onClick={() => setshowModal(true)}>Editar Perfil</Button>}        
         {loggedUser._id !== user.id && <Button>Seguir</Button>}
       </div>
     )}
+    <ConfigModal show={showModal} setShow={setshowModal} title="Editar perfil">
+       Formulario de edicion...
+    </ConfigModal>
 
     </div>
   )
 }
 
 
-// import React, { useState, useEffect } from "react";
-// 
-// import ConfigModal from "../../Modal/ConfigModal";
-// import EditUserForm from "../../User/EditUserForm";
-// 
-// 
-// import {
-//   checkFollowApi,
-//   followUserApi,
-//   unfollowUserApi
-// } from "../../../api/follow";
-
-// import "./BannerAvatar.scss";
-
-// export default function BannerAvatar(props) {
-//   const { user, loggedUser } = props;
-//   const [showModal, setShowModal] = useState(false);
-//   const [following, setFollowing] = useState(null);
-//   const [reloadFollow, setReloadFollow] = useState(false);
-//   
- 
-
-//   useEffect(() => {
-//     if (user) {
-//       checkFollowApi(user?.id).then(response => {
-//         if (response?.status) {
-//           setFollowing(true);
-//         } else {
-//           setFollowing(false);
-//         }
-//       });
-//     }
-//     setReloadFollow(false);
-//   }, [user, reloadFollow]);
-
-//   const onFollow = () => {
-//     followUserApi(user.id).then(() => {
-//       setReloadFollow(true);
-//     });
-//   };
-
-//   const onUnfollow = () => {
-//     unfollowUserApi(user.id).then(() => {
-//       setReloadFollow(true);
-//     });
-//   };
-
-//   return (
-//     <div
-//       className="banner-avatar"
-//       style={{ backgroundImage: `url('${bannerUrl}')` }}
-//     >
-//       <div
-//         className="avatar"
-//         style={{ backgroundImage: `url('${avatarUrl}')` }}
-//       />
-//       {user && (
-//         <div className="options">
-//           {loggedUser._id === user.id && (
-//             <Button onClick={() => setShowModal(true)}>Editar perfil</Button>
-//           )}
-
-//           {loggedUser._id !== user.id &&
-//             following !== null &&
-//             (following ? (
-//               <Button onClick={onUnfollow} className="unfollow">
-//                 <span>Siguiendo</span>
-//               </Button>
-//             ) : (
-//               <Button onClick={onFollow}>Seguir</Button>
-//             ))}
-//         </div>
-//       )}
-
-//       <ConfigModal
-//         show={showModal}
-//         setShow={setShowModal}
-//         title="Editar perfil"
-//       >
-//         <EditUserForm user={user} setShowModal={setShowModal} />
-//       </ConfigModal>
-//     </div>
-//   );
-// }
