@@ -13,7 +13,7 @@ export default function BannerAvatar(props) {
   console.log(props)
   
   const { user , loggedUser } = props;
-  const [showModal, setshowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false)
   const bannerUrl = user?.banner
       ? `${API_HOST}/obtenerBanner?id=${user.id}`
       : null;
@@ -29,12 +29,12 @@ export default function BannerAvatar(props) {
     <div className="avatar" style={ {backgroundImage: `url('${avatarUrl}')`}} />
     {user && (
       <div className="options">
-        {loggedUser._id === user.id && <Button onClick={() => setshowModal(true)}>Editar Perfil</Button>}        
+        {loggedUser._id === user.id && <Button onClick={() => setShowModal(true)}>Editar Perfil</Button>}        
         {loggedUser._id !== user.id && <Button>Seguir</Button>}
       </div>
     )}
-    <ConfigModal show={showModal} setShow={setshowModal} title="Editar perfil">
-       <EditUserForm user={user} setshowModal={setshowModal} />
+    <ConfigModal show={showModal} setShow={setShowModal} title="Editar perfil">
+       <EditUserForm user={user} setShowModal={setShowModal} />
     </ConfigModal>
 
     </div>

@@ -5,13 +5,13 @@ import configRouting from "./configRouting";
 
 
 export default function Routing(props) {
-  const {setrefreshCheckLogin} = props;
+  const {setRefreshCheckLogin} = props;
   return (
     <Router>
       <Switch>
           {map(configRouting, (route, index) => (
            <Route key={index} path={route.path} exact={route.exact}>
-               <route.page  setrefreshCheckLogin = {setrefreshCheckLogin} />
+               <route.page  setRefreshCheckLogin = {setRefreshCheckLogin} />
             </Route>
          ))}
       </Switch>

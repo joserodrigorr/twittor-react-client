@@ -9,7 +9,7 @@ import "./SignUpForm.scss";
 
 export default function SignUpForm(props) {
   
-  const { setshowModal } = props;
+  const { setShowModal } = props;
   const [formData, setFormData] = useState(initialFormValue());
   const [signUpLoading, setSignUpLoading] = useState(false);
 
@@ -39,7 +39,7 @@ export default function SignUpForm(props) {
               toast.warning(response.message);
             } else {
               toast.success("El registro ha sido correcto");
-              setshowModal(false);
+              setShowModal(false);
               setFormData(initialFormValue());
             }
           })

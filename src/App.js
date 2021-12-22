@@ -9,11 +9,11 @@ import Routing from "./routes/Routing";
 export default function App() {
   const [user, setUser] = useState(null);
   const [loadUser, setloadUser] = useState(false)
-  const [refreshCheckLogin, setrefreshCheckLogin] = useState(false)
+  const [refreshCheckLogin, setRefreshCheckLogin] = useState(false)
 
   useEffect(() => {
        setUser(isUserLogedApi());  
-       setrefreshCheckLogin(false);
+       setRefreshCheckLogin(false);
        setloadUser(true);
      
   }, [refreshCheckLogin]);
@@ -25,9 +25,9 @@ export default function App() {
   return  (
     <AuthContext.Provider value={user}>
       {user ? (
-         <Routing setrefreshCheckLogin={setrefreshCheckLogin} />
+         <Routing setRefreshCheckLogin={setRefreshCheckLogin} />
         ) : (
-        <SignInSingUp setrefreshCheckLogin={setrefreshCheckLogin} />
+        <SignInSingUp setRefreshCheckLogin={setRefreshCheckLogin} />
       )}
       <ToastContainer 
         position="top-right"

@@ -15,7 +15,7 @@ import {
 import "./EditUserForm.scss";
 
 export default function EditUserForm(props) {
-  const { user, setshowModal } = props;
+  const { user, setShowModal } = props;
   const [formData, setFormData] = useState(initialValue(user));
   const [bannerUrl, setBannerUrl] = useState(
     user?.banner ? `${API_HOST}/obtenerBanner?id=${user.id}` : null
@@ -80,7 +80,7 @@ export default function EditUserForm(props) {
 
     await updateInfoApi(formData)
       .then(() => {
-        setshowModal(false);
+        setShowModal(false);
       })
       .catch(() => {
         toast.error("Error al actualizar los datos");
@@ -186,5 +186,3 @@ function initialValue(user) {
     fechaNacimiento: user.fechaNacimiento || "",
   };
 }
-
-// nombre: user.nombre || "",

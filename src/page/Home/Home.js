@@ -4,9 +4,9 @@ import BasicLayout from '../../layout/BasicLayout';
 import "./Home.scss";
 
 export default function Home(props) {
-  const {setrefreshCheckLogin} = props;
+  const {setRefreshCheckLogin} = props;
   return (
-    <BasicLayout className="home" setrefreshCheckLogin = {setrefreshCheckLogin}>
+    <BasicLayout className="home" setRefreshCheckLogin = {setRefreshCheckLogin}>
       <h2>Estamos en HOME</h2>
     </BasicLayout>     
     

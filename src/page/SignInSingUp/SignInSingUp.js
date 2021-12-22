@@ -15,12 +15,12 @@ import LogoWhiteTwittor from "../../assets/png/logo-white.png";
 import "./SignInSingUp.scss";
 
 export default function SignInSingUp(props) {
-    const {setrefreshCheckLogin} = props;
-    const [showModal, setshowModal] = useState(false);
+    const {setRefreshCheckLogin} = props;
+    const [showModal, setShowModal] = useState(false);
     const [contentModal, setcontentModal] = useState(null);
 
     const openModal = content => {
-        setshowModal(true);
+        setShowModal(true);
         setcontentModal(content);
     };
 
@@ -31,12 +31,12 @@ export default function SignInSingUp(props) {
                 <LeftComponent />
                 <RightComponent  
                     openModal={openModal}  
-                    setshowModal = {setshowModal}
-                    setrefreshCheckLogin={setrefreshCheckLogin}
+                    setShowModal = {setShowModal}
+                    setRefreshCheckLogin={setRefreshCheckLogin}
                 />
             </Row>
         </Container>
-        <BasicModal show={showModal} setShow={setshowModal} >
+        <BasicModal show={showModal} setShow={setShowModal} >
             {contentModal}
         </BasicModal>
         </>
@@ -66,7 +66,7 @@ function LeftComponent(){
 }
 
 function RightComponent(props){
-    const {openModal,setshowModal,setrefreshCheckLogin}= props;
+    const {openModal,setShowModal,setRefreshCheckLogin}= props;
     
     return (
         <Col  className='signin-signup__right' xs={6}>
@@ -76,7 +76,7 @@ function RightComponent(props){
                 <h3>Únete a Twittor hoy mismo.</h3>
                 <Button 
                     variant='primary'
-                    onClick={() => openModal(<SignUpForm setshowModal={setshowModal}/>)}
+                    onClick={() => openModal(<SignUpForm setShowModal={setShowModal}/>)}
                 >
                     Regístrate
                 </Button>
@@ -84,7 +84,7 @@ function RightComponent(props){
                     variant='outline-primary'
                     onClick={() => 
                         openModal(
-                        <SignInForm setrefreshCheckLogin={setrefreshCheckLogin}/>
+                        <SignInForm setRefreshCheckLogin={setRefreshCheckLogin}/>
                         )
                     }
                 >
