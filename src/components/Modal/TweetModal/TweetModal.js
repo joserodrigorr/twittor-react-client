@@ -26,7 +26,7 @@ export default function TweetModal(props) {
           }
         })
         .catch(() => {
-          toast.warning("Erorr al enviar el tweet, inténtelo más tarde.");
+          toast.warning("Error al enviar el tweet, inténtelo más tarde.");
         });
     }
   };
