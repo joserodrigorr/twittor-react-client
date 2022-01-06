@@ -111,7 +111,7 @@ export default function SignUpForm(props) {
         </Form.Group>
 
         <Button variant="primary" type="submit">
-          {!signUpLoading ? "Registrase" : <Spinner animation="border" />}
+          {!signUpLoading ? "Registrarse" : <Spinner animation="border" />}
         </Button>
       </Form>
     </div>
