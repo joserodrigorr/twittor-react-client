@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/twittor-react-client/static/css/main.5943c076.chunk.css",
+    "main.js": "/twittor-react-client/static/js/main.423d0e00.chunk.js",
+    "main.js.map": "/twittor-react-client/static/js/main.423d0e00.chunk.js.map",
+    "runtime-main.js": "/twittor-react-client/static/js/runtime-main.601a65e7.js",
+    "runtime-main.js.map": "/twittor-react-client/static/js/runtime-main.601a65e7.js.map",
+    "static/css/2.3c53583b.chunk.css": "/twittor-react-client/static/css/2.3c53583b.chunk.css",
+    "static/js/2.ae8bbd24.chunk.js": "/twittor-react-client/static/js/2.ae8bbd24.chunk.js",
+    "static/js/2.ae8bbd24.chunk.js.map": "/twittor-react-client/static/js/2.ae8bbd24.chunk.js.map",
+    "static/js/3.42a9c76b.chunk.js": "/twittor-react-client/static/js/3.42a9c76b.chunk.js",
+    "static/js/3.42a9c76b.chunk.js.map": "/twittor-react-client/static/js/3.42a9c76b.chunk.js.map",
+    "index.html": "/twittor-react-client/index.html",
+    "static/css/2.3c53583b.chunk.css.map": "/twittor-react-client/static/css/2.3c53583b.chunk.css.map",
+    "static/css/main.5943c076.chunk.css.map": "/twittor-react-client/static/css/main.5943c076.chunk.css.map",
+    "static/js/2.ae8bbd24.chunk.js.LICENSE.txt": "/twittor-react-client/static/js/2.ae8bbd24.chunk.js.LICENSE.txt",
+    "static/media/camera.d25775ca.svg": "/twittor-react-client/static/media/camera.d25775ca.svg",
+    "static/media/close.da5c4222.svg": "/twittor-react-client/static/media/close.da5c4222.svg",
+    "static/media/date-birth.a0465456.svg": "/twittor-react-client/static/media/date-birth.a0465456.svg",
+    "static/media/error-404.fe6e5b62.png": "/twittor-react-client/static/media/error-404.fe6e5b62.png",
+    "static/media/link.93889986.svg": "/twittor-react-client/static/media/link.93889986.svg",
+    "static/media/location.6b82d71c.svg": "/twittor-react-client/static/media/location.6b82d71c.svg",
+    "static/media/logo-white.13c88c37.png": "/twittor-react-client/static/media/logo-white.13c88c37.png",
+    "static/media/logo.0d659bb2.png": "/twittor-react-client/static/media/logo.0d659bb2.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.601a65e7.js",
+    "static/css/2.3c53583b.chunk.css",
+    "static/js/2.ae8bbd24.chunk.js",
+    "static/css/main.5943c076.chunk.css",
+    "static/js/main.423d0e00.chunk.js"
+  ]
+}
